@@ -1,0 +1,5 @@
+const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav-links');
+if(toggle&&nav){toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});}
+document.querySelectorAll('.filter').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));button.classList.add('active');const filter=button.dataset.filter;document.querySelectorAll('.food-card').forEach(card=>{card.hidden=filter!=='all'&&card.dataset.category!==filter;});}));
+const form=document.querySelector('#contactForm');const message=document.querySelector('#formMessage');
+if(form&&message){form.addEventListener('submit',event=>{event.preventDefault();message.textContent='Thank you! This demo form does not send or store messages.';form.reset();});}
